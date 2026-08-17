@@ -1,29 +1,370 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0b1f3a" />
-    <meta name="description" content="Portfolio of James Andanje — Data Analyst, Business Intelligence and Research professional in Nairobi, Kenya." />
-    <meta name="keywords" content="James Andanje, Data Analyst, Business Intelligence, Power BI, Market Research, Nairobi, Kenya" />
-    <meta name="author" content="James Andanje" />
-    <meta property="og:title" content="James Andanje | Data Analyst & Business Intelligence" />
-    <meta property="og:description" content="Turning data and research into business insight." />
-    <meta property="og:type" content="website" />
-    <title>James Andanje | Data Analyst & Business Intelligence</title>
-  </head>
-  <body>
-    <div id="root"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#071827" />
+  <meta name="description" content="James Andanje is a Nairobi-based Data Analyst and Research & Assistant Consultant focused on business intelligence, market research, strategic analysis and data storytelling." />
+  <meta name="keywords" content="James Andanje, Data Analyst Nairobi, Business Intelligence, Power BI, Market Research, Research Analyst, Data Visualization, Strategic Analysis" />
+  <meta name="author" content="James Andanje" />
+  <meta property="og:title" content="James Andanje | Data Analyst & Research Professional" />
+  <meta property="og:description" content="From Data to Insight. From Insight to Action. Explore James Andanje's analytics, business intelligence, research and strategic communication portfolio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://andanje.netlify.app/" />
+  <meta property="og:image" content="https://andanje.netlify.app/assets/og-card.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://andanje.netlify.app/" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>James Andanje | Data Analyst · BI · Research</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-    <!-- Netlify detects this static form at build time. The React form posts to the same name. -->
-    <form name="portfolio-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input type="text" name="bot-field" />
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <input type="text" name="subject" />
-      <textarea name="message"></textarea>
-    </form>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="James Andanje home">
+        <span class="brand-mark">JA</span>
+        <span class="brand-copy"><strong>James Andanje</strong><small>Data · Research · Strategy</small></span>
+      </a>
 
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#writing">Writing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-button tooltip" id="printProfile" type="button" aria-label="Print or save profile as PDF" data-tooltip="Save profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+        </button>
+        <a class="nav-cta" href="#contact">Let’s talk <span>↗</span></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner container">
+      <p class="mobile-menu-label">Navigate</p>
+      <nav aria-label="Mobile navigation">
+        <a href="#home"><span>01</span>Home</a>
+        <a href="#about"><span>02</span>About</a>
+        <a href="#experience"><span>03</span>Experience</a>
+        <a href="#projects"><span>04</span>Projects</a>
+        <a href="#skills"><span>05</span>Skills</a>
+        <a href="#writing"><span>06</span>Writing</a>
+        <a href="#contact"><span>07</span>Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <span>Nairobi, Kenya</span>
+        <a href="mailto:okelloandanje@gmail.com">okelloandanje@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="hero section-dark" id="home" data-section="home">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <div class="availability"><span></span> Open to data, BI, research & strategy opportunities</div>
+          <p class="hero-overline">Data Analyst <i>·</i> Business Intelligence <i>·</i> Research</p>
+          <h1>From Data to Insight.<br/><em>From Insight to Action.</em></h1>
+          <p class="hero-lede">I combine quantitative analysis, business intelligence and research to turn complex information into clear business insight — then communicate what decision-makers should pay attention to next.</p>
+          <div class="hero-actions">
+            <a class="button button-light magnetic" href="#projects"><span>Explore selected work</span><b>↗</b></a>
+            <a class="button button-ghost magnetic" href="#about"><span>How I work</span><b>↓</b></a>
+          </div>
+          <div class="hero-links">
+            <span>Nairobi, Kenya</span>
+            <a href="https://www.linkedin.com/in/andanje-james-10680522b" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://wa.me/254795174075" target="_blank" rel="noreferrer">WhatsApp ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" data-delay="120">
+          <div class="visual-label"><span>Live thinking model</span><small>Data → Decision</small></div>
+          <div class="analytics-panel" id="analyticsPanel">
+            <div class="panel-head">
+              <div><span class="tiny-label">Decision intelligence</span><strong>Signal board</strong></div>
+              <span class="live-chip"><i></i> LIVE</span>
+            </div>
+            <div class="kpi-row">
+              <div class="kpi-main"><span>Insight index</span><strong data-count="84.6" data-decimals="1">0</strong><small>Context + analysis + action</small></div>
+              <div class="pulse-ring"><span>BI</span><i></i></div>
+            </div>
+            <div class="chart-wrap">
+              <div class="chart-axis"><span>Signal</span><span>Pattern</span><span>Insight</span></div>
+              <div class="bars" aria-hidden="true">
+                <i style="--h:34%"></i><i style="--h:48%"></i><i style="--h:42%"></i><i style="--h:61%"></i><i style="--h:54%"></i><i style="--h:72%"></i><i style="--h:68%"></i><i style="--h:83%"></i><i style="--h:77%"></i><i style="--h:94%"></i>
+              </div>
+              <svg class="trend-line" viewBox="0 0 500 150" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,124 C65,118 70,92 125,96 S200,62 250,73 S325,38 370,48 S445,20 500,13"/>
+              </svg>
+            </div>
+            <div class="signal-grid">
+              <div><span>01</span><strong>Data</strong><small>What happened?</small></div>
+              <div><span>02</span><strong>Research</strong><small>Why does it matter?</small></div>
+              <div><span>03</span><strong>Strategy</strong><small>What next?</small></div>
+            </div>
+          </div>
+          <div class="floating-pill fp-one">Research → Context</div>
+          <div class="floating-pill fp-two">Insight → Decision</div>
+        </div>
+      </div>
+      <div class="capability-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>DATA ANALYTICS</span><i>◆</i><span>BUSINESS INTELLIGENCE</span><i>◆</i><span>MARKET RESEARCH</span><i>◆</i><span>STRATEGIC INSIGHT</span><i>◆</i><span>DATA STORYTELLING</span><i>◆</i>
+          <span>DATA ANALYTICS</span><i>◆</i><span>BUSINESS INTELLIGENCE</span><i>◆</i><span>MARKET RESEARCH</span><i>◆</i><span>STRATEGIC INSIGHT</span><i>◆</i><span>DATA STORYTELLING</span><i>◆</i>
+        </div>
+      </div>
+    </section>
+
+    <section class="recruiter-strip" aria-label="Recruiter snapshot">
+      <div class="container recruiter-grid">
+        <div class="recruiter-intro reveal">
+          <span class="eyebrow">Recruiter snapshot</span>
+          <h2>A quantitative analyst with a business lens.</h2>
+        </div>
+        <div class="metric reveal" data-delay="80"><strong data-count="2" data-suffix="+">0</strong><span>Years building analytics & research experience</span></div>
+        <div class="metric reveal" data-delay="140"><strong data-count="100" data-suffix="+">0</strong><span>Published creative works since 2020</span></div>
+        <div class="metric reveal" data-delay="200"><strong data-count="4">0</strong><span>Core professional pillars</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="about" data-section="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">01 / About</span>
+          <div><h2>An analyst who understands the question behind the numbers.</h2><p>My work sits at the intersection of quantitative analysis, business research and communication. I care about what happened, what is changing, why it matters, and what action could follow.</p></div>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-manifesto reveal">
+            <blockquote>“Data has value when it leads to understanding, and understanding has value when it supports better decisions.”</blockquote>
+            <p>I’m James Andanje, a Data Analyst and Research & Assistant Consultant. My foundation is a BSc in Statistics and Programming, strengthened by practical work across Power BI, Excel, Power Query, DAX, market research, business research, strategic analysis and executive communication.</p>
+            <p>Rather than treating analytics as an isolated technical task, I connect the full analytical journey — from the business question and source data to interpretation, visualization and decision support.</p>
+          </div>
+
+          <div class="about-side reveal" data-delay="120">
+            <div class="profile-card tilt-card">
+              <div class="profile-monogram">JA</div>
+              <div><span class="tiny-label">Professional identity</span><h3>Data Analyst</h3><p>Business Intelligence · Research · Market Analysis · Strategic Insight</p></div>
+              <ul>
+                <li><span>Base</span><strong>Nairobi, Kenya</strong></li>
+                <li><span>Current</span><strong>Enreal Limited</strong></li>
+                <li><span>Education</span><strong>BSc Statistics & Programming</strong></li>
+              </ul>
+            </div>
+            <button class="text-action" id="copyEmail" type="button" data-copy="okelloandanje@gmail.com"><span>Copy email address</span><b>Copy</b></button>
+          </div>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card reveal tilt-card"><span>01</span><h3>Data Analytics</h3><p>Cleaning, structuring and analyzing data to identify patterns, trends, performance signals and the questions behind them.</p><div><em>Analysis</em><em>KPIs</em><em>Trends</em><em>Interpretation</em></div></article>
+          <article class="pillar-card reveal tilt-card" data-delay="70"><span>02</span><h3>Business Intelligence</h3><p>Turning operational information into dashboards and reporting systems that help decision-makers see what matters faster.</p><div><em>Power BI</em><em>DAX</em><em>Power Query</em><em>Dashboards</em></div></article>
+          <article class="pillar-card reveal tilt-card" data-delay="140"><span>03</span><h3>Research & Markets</h3><p>Investigating industries, companies, competitors and market conditions to create context around business questions.</p><div><em>Market Research</em><em>Industry Research</em><em>Strategy</em></div></article>
+          <article class="pillar-card reveal tilt-card" data-delay="210"><span>04</span><h3>Strategic Communication</h3><p>Translating findings into clear recommendations, presentations, visual stories and decision-ready communication.</p><div><em>Storytelling</em><em>Presentations</em><em>Visuals</em></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section section-soft" aria-labelledby="processTitle">
+      <div class="container">
+        <div class="process-head reveal"><span class="eyebrow">How I think</span><h2 id="processTitle">Analysis is a journey, not a chart.</h2><p>The strongest work connects technical execution to the business decision it is meant to support.</p></div>
+        <div class="process-flow" id="processFlow">
+          <button class="process-step active" type="button" data-process="0"><span>01</span><strong>Question</strong><small>What needs to be understood?</small></button>
+          <button class="process-step" type="button" data-process="1"><span>02</span><strong>Data + Research</strong><small>What evidence is available?</small></button>
+          <button class="process-step" type="button" data-process="2"><span>03</span><strong>Analysis</strong><small>What patterns are emerging?</small></button>
+          <button class="process-step" type="button" data-process="3"><span>04</span><strong>Insight</strong><small>Why does it matter?</small></button>
+          <button class="process-step" type="button" data-process="4"><span>05</span><strong>Decision Support</strong><small>What action could follow?</small></button>
+        </div>
+        <div class="process-detail reveal" id="processDetail" aria-live="polite">
+          <span>01 / Business Question</span>
+          <h3>Start with the decision, not the dashboard.</h3>
+          <p>I define the business question first so that the analysis is designed around the information someone actually needs to understand or act upon.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark experience-section" id="experience" data-section="experience">
+      <div class="container">
+        <div class="section-heading light reveal">
+          <span class="eyebrow">02 / Experience</span>
+          <div><h2>Professional growth through analytics, research and consulting.</h2><p>My progression at Enreal reflects expanding responsibility across data work, market intelligence, strategic analysis and professional communication.</p></div>
+        </div>
+
+        <div class="experience-shell">
+          <div class="experience-nav reveal" role="tablist" aria-label="Experience roles">
+            <button class="experience-tab active" type="button" role="tab" aria-selected="true" data-exp="0"><span>2024 — Present</span><strong>Enreal Limited</strong></button>
+            <button class="experience-tab" type="button" role="tab" aria-selected="false" data-exp="1"><span>Feb — Aug 2024</span><strong>Enreal Internship</strong></button>
+            <button class="experience-tab" type="button" role="tab" aria-selected="false" data-exp="2"><span>Earlier</span><strong>AVSI–AESA</strong></button>
+            <button class="experience-tab" type="button" role="tab" aria-selected="false" data-exp="3"><span>2023 — 2024</span><strong>Digital Services</strong></button>
+          </div>
+          <article class="experience-detail reveal" data-delay="100" id="experienceDetail" role="tabpanel" aria-live="polite"></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects" data-section="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">03 / Selected work</span>
+          <div><h2>Case studies that show how I move from information to insight.</h2><p>Representative portfolio summaries are presented without confidential client information. Open any project to see the problem, approach, outputs and business value.</p></div>
+        </div>
+
+        <div class="project-toolbar reveal">
+          <div class="filter-group" role="group" aria-label="Filter projects">
+            <button class="filter-button active" type="button" data-filter="all">All</button>
+            <button class="filter-button" type="button" data-filter="data">Data & BI</button>
+            <button class="filter-button" type="button" data-filter="research">Research</button>
+            <button class="filter-button" type="button" data-filter="strategy">Strategy</button>
+            <button class="filter-button" type="button" data-filter="communication">Communication</button>
+          </div>
+          <span class="project-count" id="projectCount">6 projects</span>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <article class="project-card project-featured reveal" data-category="data" data-project="livestock-intelligence" tabindex="0">
+            <div class="project-visual visual-data" aria-hidden="true"><div class="mini-dashboard"><span></span><span></span><span></span><i></i><b></b></div><small>Operational data → BI</small></div>
+            <div class="project-body"><div class="project-top"><span>01 / DATA & BI</span><button type="button" aria-label="Open Livestock Transaction Intelligence case study">↗</button></div><h3>Livestock Transaction Intelligence</h3><p>Turning live transaction data into structured, decision-ready business intelligence.</p><div class="tag-row"><span>Power BI</span><span>Power Query</span><span>DAX</span><span>Excel</span></div></div>
+          </article>
+
+          <article class="project-card project-featured reveal" data-delay="80" data-category="research" data-project="kajiado-research" tabindex="0">
+            <div class="project-visual visual-research" aria-hidden="true"><div class="research-map"><i></i><i></i><i></i><i></i><span>VALUE CHAIN</span></div><small>Markets → Transformation</small></div>
+            <div class="project-body"><div class="project-top"><span>02 / RESEARCH</span><button type="button" aria-label="Open Kajiado Livestock Value Chain Research case study">↗</button></div><h3>Kajiado Livestock Value Chain Research</h3><p>Researching innovation, markets and sustainable transformation in livestock systems.</p><div class="tag-row"><span>Market Analysis</span><span>Agribusiness</span><span>Research</span></div></div>
+          </article>
+
+          <article class="project-card reveal" data-category="strategy" data-project="strategic-business-research" tabindex="0">
+            <div class="project-visual visual-strategy" aria-hidden="true"><div class="scenario-grid"><span>A</span><span>B</span><span>C</span><i></i></div><small>Evidence → Options</small></div>
+            <div class="project-body"><div class="project-top"><span>03 / STRATEGY</span><button type="button" aria-label="Open Strategic Business Research case study">↗</button></div><h3>Strategic Business Research</h3><p>Moving from market information to choices, scenarios and recommendations.</p><div class="tag-row"><span>Business Research</span><span>Scenario Planning</span><span>Strategy</span></div></div>
+          </article>
+
+          <article class="project-card reveal" data-delay="60" data-category="communication" data-project="executive-presentations" tabindex="0">
+            <div class="project-visual visual-presentation" aria-hidden="true"><div class="slides-stack"><i></i><i></i><i></i><span>EXEC</span></div><small>Complexity → Clarity</small></div>
+            <div class="project-body"><div class="project-top"><span>04 / COMMUNICATION</span><button type="button" aria-label="Open Executive Business Presentations case study">↗</button></div><h3>Executive Business Presentations</h3><p>Research, strategy and visual storytelling developed for professional audiences.</p><div class="tag-row"><span>PowerPoint</span><span>Strategy</span><span>Storytelling</span></div></div>
+          </article>
+
+          <article class="project-card reveal" data-delay="120" data-category="communication" data-project="visual-communication" tabindex="0">
+            <div class="project-visual visual-design" aria-hidden="true"><div class="design-grid"><i></i><b></b><span></span><em></em></div><small>Information → Visual hierarchy</small></div>
+            <div class="project-body"><div class="project-top"><span>05 / VISUAL</span><button type="button" aria-label="Open Visual Communication case study">↗</button></div><h3>Visual Communication & Graphic Design</h3><p>Designing business information so it becomes easier to understand and remember.</p><div class="tag-row"><span>Graphic Design</span><span>Presentation Design</span><span>Visuals</span></div></div>
+          </article>
+
+          <article class="project-card reveal" data-delay="180" data-category="communication" data-project="writing-storytelling" tabindex="0">
+            <div class="project-visual visual-writing" aria-hidden="true"><div class="writing-lines"><i></i><i></i><i></i><i></i><span>100+</span></div><small>Narrative → Communication</small></div>
+            <div class="project-body"><div class="project-top"><span>06 / WRITING</span><button type="button" aria-label="Open Writing & Storytelling case study">↗</button></div><h3>Writing & Storytelling</h3><p>A long-term creative practice that strengthens narrative thinking and data communication.</p><div class="tag-row"><span>Writing</span><span>Storytelling</span><span>Communication</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section section-soft" id="skills" data-section="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">04 / Skills</span>
+          <div><h2>Technical execution, business context and communication.</h2><p>My strongest toolkit is where analytical tools meet research discipline and the ability to explain what the work means.</p></div>
+        </div>
+
+        <div class="skills-shell reveal">
+          <div class="skills-tabs" role="tablist" aria-label="Skill categories">
+            <button class="skill-tab active" type="button" data-skill="data" role="tab" aria-selected="true">Data & BI</button>
+            <button class="skill-tab" type="button" data-skill="research" role="tab" aria-selected="false">Research</button>
+            <button class="skill-tab" type="button" data-skill="strategy" role="tab" aria-selected="false">Strategy</button>
+            <button class="skill-tab" type="button" data-skill="communication" role="tab" aria-selected="false">Communication</button>
+            <button class="skill-tab" type="button" data-skill="developing" role="tab" aria-selected="false">Developing</button>
+          </div>
+          <div class="skills-content" id="skillsContent" role="tabpanel" aria-live="polite"></div>
+        </div>
+
+        <div class="toolkit-row reveal">
+          <span>Core toolkit</span>
+          <div><strong>Power BI</strong><strong>Excel</strong><strong>Power Query</strong><strong>DAX</strong><strong>Google Sheets</strong><strong>SPSS</strong><strong>PowerPoint</strong><strong>Python <small>developing</small></strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section research-section" aria-labelledby="researchTitle">
+      <div class="container research-layout">
+        <div class="research-copy reveal"><span class="eyebrow">Domain perspective</span><h2 id="researchTitle">Research that connects markets, operations and strategy.</h2><p>My professional work includes market, business, industry, company and sector research. A distinctive domain area is agribusiness and livestock value chains, where I have worked with questions spanning transactions, farmer services, off-takers, pastoralism, productivity and market systems.</p><a class="inline-link" href="#projects">See research case studies <span>↗</span></a></div>
+        <div class="research-canvas reveal" data-delay="100" aria-hidden="true">
+          <div class="orbit orbit-a"><span>MARKETS</span></div><div class="orbit orbit-b"><span>DATA</span></div><div class="orbit orbit-c"><span>STRATEGY</span></div><div class="orbit-core">INSIGHT</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark writing-section" id="writing" data-section="writing">
+      <div class="container writing-layout">
+        <div class="writing-number reveal"><strong data-count="100" data-suffix="+">0</strong><span>creative works published since 2020</span></div>
+        <div class="writing-copy reveal" data-delay="100"><span class="eyebrow">05 / Beyond the numbers</span><h2>Writing sharpens the way I communicate analysis.</h2><p>Alongside analytics and research, I maintain an active creative writing practice under <strong>Andanje Jamie Poet</strong>, including poetry, short stories, memoir-style writing and psychological fiction.</p><p>I treat this as a professional advantage: writing develops structure, clarity, narrative judgment and an instinct for audience — the same capabilities that make reports, presentations and data stories more effective.</p><div class="writing-tags"><span>Poetry</span><span>Short stories</span><span>Creative narratives</span><span>Data storytelling</span></div></div>
+      </div>
+    </section>
+
+    <section class="section education-section" aria-labelledby="educationTitle">
+      <div class="container">
+        <div class="education-card reveal">
+          <span class="eyebrow">Education & development</span>
+          <div class="education-main"><span class="education-year">2018 — 2022</span><div><h2 id="educationTitle">BSc in Statistics and Programming</h2><p>Kenyatta University</p></div></div>
+          <div class="education-meta"><p>A quantitative foundation in statistics, programming, research methodology, analytical problem-solving and data interpretation.</p><p><strong>Continuous development:</strong> data analytics, professional branding, communication, collaboration, technology and innovation through programs including ALX.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section section-dark" id="contact" data-section="contact">
+      <div class="container contact-layout">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">06 / Contact</span>
+          <h2>Let’s turn information into something useful.</h2>
+          <p>I’m interested in opportunities where analytics, business intelligence, research and strategic communication can support better decisions.</p>
+          <div class="contact-links">
+            <a href="mailto:okelloandanje@gmail.com"><span>Email</span><strong>okelloandanje@gmail.com</strong><b>↗</b></a>
+            <a href="tel:+254795174075"><span>Phone</span><strong>+254 795 174 075</strong><b>↗</b></a>
+            <a href="https://www.linkedin.com/in/andanje-james-10680522b" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>andanje-james-10680522b</strong><b>↗</b></a>
+            <a href="https://wa.me/254795174075" target="_blank" rel="noreferrer"><span>WhatsApp</span><strong>Start a conversation</strong><b>↗</b></a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" data-delay="100" name="portfolio-contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="portfolio-contact" />
+          <p class="hidden-field"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+          <div class="form-head"><span>Send a message</span><small>Usually best for opportunities & collaborations</small></div>
+          <label><span>Name</span><input type="text" name="name" placeholder="Your name" autocomplete="name" required /></label>
+          <label><span>Email</span><input type="email" name="email" placeholder="you@company.com" autocomplete="email" required /></label>
+          <label><span>Company / Organization</span><input type="text" name="company" placeholder="Optional" autocomplete="organization" /></label>
+          <label><span>Message</span><textarea name="message" rows="5" placeholder="Tell me about the opportunity, project or conversation you'd like to have." required></textarea></label>
+          <button class="button button-light form-submit magnetic" type="submit"><span>Send message</span><b>↗</b></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark">JA</span><span class="brand-copy"><strong>James Andanje</strong><small>Data · Research · Strategy</small></span></a>
+      <p>Built around a simple belief: good analysis should make the next decision clearer.</p>
+      <div><span>© <span id="currentYear"></span> James Andanje</span><a href="#home">Back to top ↑</a></div>
+    </div>
+  </footer>
+
+  <div class="project-drawer" id="projectDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="drawer-top"><span id="drawerEyebrow">Case study</span><button type="button" id="drawerClose" aria-label="Close case study"><span></span><span></span></button></div>
+      <div class="drawer-scroll" id="drawerContent"></div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Email copied</div>
+
+  <script src="script.js" defer></script>
+</body>
 </html>

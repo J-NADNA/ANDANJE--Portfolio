@@ -1,80 +1,53 @@
 # James Andanje — Professional Portfolio
 
-A recruiter-focused professional portfolio for James Andanje, built with React, Vite, Motion and custom CSS.
-
-## Professional positioning
-
-**Data Analyst | Business Intelligence | Research | Market Analysis**
-
-> From Data to Insight. From Insight to Action.
-
-The site presents James as an analyst who combines quantitative analysis, business intelligence, research, market analysis, strategy and communication.
+A recruiter-focused personal portfolio built with **HTML, CSS and vanilla JavaScript**. There is no React build step and no package installation required.
 
 ## Technology
 
-- React
-- Vite
-- JavaScript
-- Motion for React
-- Custom responsive CSS
-- Netlify-ready contact form
-- GitHub -> Netlify continuous deployment
+- Semantic HTML5
+- Modern CSS (responsive layouts, transitions, print styles)
+- Vanilla JavaScript (no frameworks or animation libraries)
+- Netlify Forms for the contact form
+- Netlify-ready static deployment
 
-## Portfolio sections
+## Main interactions
 
-- Home
-- About
-- Work / Experience
-- Projects
-- Skills
-- Education
-- Writing
-- Contact
+- Scroll progress and adaptive sticky navigation
+- Active-section navigation state
+- Full-screen mobile menu
+- Scroll reveal animations
+- Animated metrics and hero analytics visual
+- Subtle pointer tilt / magnetic interactions on desktop
+- Interactive analytical-process explorer
+- Experience tabs
+- Project filtering
+- Project case-study drawer
+- Skill-category tabs
+- Copy-email feedback
+- Print / Save as PDF recruiter profile action
+- Keyboard support and reduced-motion accessibility
 
-## Featured projects
+## Local preview
 
-1. Livestock Transaction Intelligence
-2. Kajiado Livestock Value Chain Research
-3. Strategic Business Research
-4. Executive Business Presentations
-5. Visual Communication & Graphic Design
-6. Writing & Storytelling
-
-## Edit portfolio content
-
-Most portfolio copy and structured content is stored in:
-
-```text
-src/data/portfolio.js
-```
-
-This makes it easier to update experience, projects, skills and contact information later.
-
-## Run locally
+You can open `index.html` directly, but a tiny local server is better:
 
 ```bash
-npm install
-npm run dev
+python3 -m http.server 8080
 ```
 
-## Build
+Then visit `http://localhost:8080`.
 
-```bash
-npm run build
-```
+## Editing content
 
-The production output is generated in `dist/`.
+- Main page copy: `index.html`
+- Experience, skills and project case-study detail: `script.js`
+- Colors, spacing and visual design: `styles.css`
+- Netlify settings: `netlify.toml`
 
-## Deploy to Netlify
+## Adding real project screenshots
 
-Use GitHub continuous deployment. The repository root must contain `package.json`, `index.html`, `netlify.toml`, `src/`, and `public/`.
+The current project visuals are original CSS abstractions, so the portfolio does not pretend to show work samples that have not been supplied. When you have screenshots you are allowed to publish, add them to `assets/` and replace the relevant project visual blocks.
 
-Netlify settings:
+## Contact form
 
-```text
-Build command: npm run build
-Publish directory: dist
-Base directory: (blank)
-```
-
-See `DEPLOYMENT.md` for step-by-step troubleshooting and deployment instructions.
+The form uses Netlify Forms and posts to `/success.html`. Once deployed through Netlify, submissions should appear in your Netlify site forms area.
