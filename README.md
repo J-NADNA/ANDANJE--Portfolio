@@ -1,5 +1,7 @@
 # James Andanje — Professional Portfolio
 
+> **Strict positioning:** Data Analytics · Business Intelligence · Research · Market Analysis · Strategic Insight. Layout inspiration is separate from career content.
+
 A recruiter-focused personal portfolio built with **HTML, CSS and vanilla JavaScript**. There is no React build step and no package installation required.
 
 ## Technology
@@ -7,7 +9,7 @@ A recruiter-focused personal portfolio built with **HTML, CSS and vanilla JavaSc
 - Semantic HTML5
 - Modern CSS (responsive layouts, transitions, print styles)
 - Vanilla JavaScript (no frameworks or animation libraries)
-- Netlify Forms for the contact form
+- Google Apps Script + Google Sheets contact pipeline (with Netlify Forms fallback until configured)
 - Netlify-ready static deployment
 
 ## Main interactions
@@ -50,4 +52,10 @@ The current project visuals are original CSS abstractions, so the portfolio does
 
 ## Contact form
 
-The form uses Netlify Forms and posts to `/success.html`. Once deployed through Netlify, submissions should appear in your Netlify site forms area.
+The preferred contact flow is now:
+
+**Portfolio form → Google Apps Script → Google Sheet + email notification.**
+
+The Apps Script file is already preconfigured with James's spreadsheet ID and notification email. Follow `GOOGLE-SHEETS-SETUP.md`, then paste the generated `/exec` URL into `contact-config.js`.
+
+Until that URL is added, the form keeps Netlify Forms as a deployment-safe fallback.

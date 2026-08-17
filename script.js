@@ -10,8 +10,8 @@ const experience = [
     period: 'August 2024 — Present',
     role: 'Research & Assistant Consultant / Data Analyst',
     company: 'Enreal Limited',
-    summary: 'Working across data analytics, business intelligence, business and market research, strategic analysis, reporting, presentations and visual communication. The role connects quantitative work with the context decision-makers need around the numbers.',
-    highlights: ['Power BI & KPI reporting', 'Business & market research', 'Strategic analysis', 'Executive presentations', 'Performance monitoring', 'Visual communication'],
+    summary: 'Work across data analytics, business intelligence, business and market research, strategic analysis, performance monitoring, reporting, presentations and visual communication. The role connects quantitative work with the business context decision-makers need around the numbers.',
+    highlights: ['Power BI & KPI reporting', 'Business & market research', 'Strategic analysis', 'Performance monitoring', 'Business reporting', 'Visual communication'],
     note: 'Progressed from Data Analyst Intern into a broader analytics, research and consulting role.'
   },
   {
@@ -20,23 +20,23 @@ const experience = [
     company: 'Enreal Limited',
     summary: 'Built practical foundations in data preparation, analysis, business information, research, reporting and consulting support while learning how analytical work fits into broader client and business questions.',
     highlights: ['Data preparation', 'Business information', 'Research support', 'Reporting', 'Analytical problem-solving'],
-    note: 'This internship led directly into the current Research & Assistant Consultant / Data Analyst position.'
+    note: 'The internship led directly into the Research & Assistant Consultant / Data Analyst position.'
   },
   {
     period: 'Earlier Experience',
     role: 'Data Entry Officer & Life Skills Trainer',
     company: 'AVSI–AESA',
-    summary: 'Worked with structured information, data accuracy, documentation, training, facilitation and participant support — an early foundation in the importance of reliable information and clear communication.',
-    highlights: ['Data quality', 'Information management', 'Documentation', 'Training & facilitation', 'Participant support'],
-    note: 'Strengthened accuracy, communication and the practical understanding of how data quality begins at collection and entry.'
+    summary: 'Worked with structured information, data accuracy, documentation, verification, training, facilitation and participant support — an early foundation in reliable data collection and information quality.',
+    highlights: ['Data quality', 'Information management', 'Data verification', 'Documentation', 'Training & facilitation'],
+    note: 'Strengthened accuracy, communication and the practical understanding that good analysis starts with reliable information.'
   },
   {
     period: 'June 2023 — February 2024',
     role: 'Cyber Attendant',
-    company: 'Digital Services',
-    summary: 'Supported clients with document processing, digital services, data handling, printing, scanning and day-to-day technology problem-solving in a client-facing environment.',
-    highlights: ['Digital services', 'Client support', 'Document processing', 'Data handling', 'Digital literacy'],
-    note: 'Built practical confidence working with digital information, people and fast-turnaround service requests.'
+    company: 'Digital Services & Client Support',
+    summary: 'Supported clients with digital services, document processing, data handling, scanning, printing and practical technology troubleshooting while managing multiple information requests accurately.',
+    highlights: ['Digital services', 'Data handling', 'Document processing', 'Client communication', 'Digital literacy'],
+    note: 'Built practical confidence working with digital information, structured documents and fast-turnaround service requests.'
   }
 ];
 
@@ -60,6 +60,11 @@ const skillSets = {
     title: 'Communication & Data Storytelling',
     description: 'Turning complex information into clear reports, presentations and visual narratives designed for professional and executive audiences.',
     items: ['Data Storytelling', 'Report Writing', 'Executive Presentations', 'Research Communication', 'Presentation Design', 'Visual Communication', 'Professional Writing', 'Graphic Design', 'Infographic Development']
+  },
+  workflow: {
+    title: 'Data Workflows & Information Management',
+    description: 'Transferable workflow skills that strengthen analytics: collecting information consistently, maintaining clean records, organizing evidence and moving data from source systems into usable reporting structures.',
+    items: ['Information Management', 'Data Collection Workflows', 'Google Workspace', 'JotForm', 'Google Forms', 'Structured Documentation', 'Record Organization', 'Data Quality Control', 'Research Briefing', 'Stakeholder Communication', 'Operational Data Handling']
   },
   developing: {
     title: 'Developing Technical Capabilities',
@@ -122,6 +127,15 @@ const projectData = {
     challenge: 'Professional communication is not only about being technically correct. Structure, pacing, language and audience determine whether an idea is understood and remembered.',
     approach: ['Built a consistent long-term writing practice across multiple forms.', 'Developed narrative structure, clarity and sensitivity to audience.', 'Applied storytelling instincts to reports, presentations and analytical communication.'],
     value: ['A distinctive communication strength alongside quantitative analysis.', 'Greater attention to narrative, audience and clarity in professional work.', 'A natural foundation for data storytelling and executive communication.']
+  },
+  'information-workflow': {
+    number: '07', category: 'Digital Workflow', title: 'Information Management Workflow',
+    subtitle: 'Connecting digital data capture, structured storage, transformation and reporting into a practical information flow.',
+    tools: ['JotForm', 'Google Workspace', 'Information Management', 'Reporting'],
+    context: 'Professional work has included designing and supporting digital information flows using online forms, cloud storage, structured records, data processing and reporting so information can move more reliably from collection to use.',
+    challenge: 'Information is often collected in one tool, stored in another and reported somewhere else. Without a deliberate workflow, teams can lose consistency, traceability and time when moving information between those stages.',
+    approach: ['Structured the flow from digital data capture to storage and downstream use.', 'Considered source integrity and the separation between raw information and transformed analytical data.', 'Organized files and records for easier retrieval and reporting.', 'Connected forms, Google Workspace and data-processing steps into a clearer operating workflow.'],
+    value: ['A practical example of thinking across the full data lifecycle.', 'Better organization and accessibility of operational information.', 'Transferable workflow thinking across analytics, research and business-information environments.']
   }
 };
 
@@ -374,6 +388,79 @@ function setupUtilities() {
   });
 }
 
+
+function setupContactForm() {
+  const form = $('#contactForm');
+  if (!form) return;
+
+  const submitButton = $('.form-submit', form);
+  const submitLabel = $('span', submitButton);
+  const feedback = $('#formFeedback');
+  const defaultLabel = submitLabel.textContent;
+  const configuredEndpoint = String(window.PORTFOLIO_CONTACT?.googleAppsScriptUrl || '').trim();
+  const hasGoogleEndpoint = /^https:\/\/script\.google\.com\/macros\/s\/.+\/exec(?:\?.*)?$/.test(configuredEndpoint);
+
+  const setFeedback = (type, message) => {
+    feedback.className = `form-feedback is-visible is-${type}`;
+    feedback.textContent = message;
+  };
+
+  const encodeForm = formData => new URLSearchParams([...formData.entries()]).toString();
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    feedback.className = 'form-feedback';
+    feedback.textContent = '';
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    submitButton.disabled = true;
+    submitLabel.textContent = 'Sending…';
+
+    try {
+      const formData = new FormData(form);
+      formData.set('form-name', form.getAttribute('name'));
+
+      if (hasGoogleEndpoint) {
+        // Apps Script web apps are cross-origin. no-cors keeps the static portfolio
+        // deployment simple while Google stores the row and sends the email alert.
+        await fetch(configuredEndpoint, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encodeForm(formData)
+        });
+      } else {
+        // Safe fallback while the Google endpoint has not yet been pasted into
+        // contact-config.js. Netlify Forms can still receive the submission.
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encodeForm(formData)
+        });
+        if (!response.ok) throw new Error(`Submission failed with status ${response.status}`);
+      }
+
+      form.reset();
+      const successMessage = hasGoogleEndpoint
+        ? 'Message sent successfully. Your enquiry has been recorded and I have been notified by email.'
+        : 'Message sent successfully. Google Sheets is not connected yet, so this submission used the Netlify backup.';
+      setFeedback('success', successMessage);
+      showToast('Message sent successfully');
+    } catch (error) {
+      console.error('Portfolio form submission error:', error);
+      setFeedback('error', 'The message could not be sent right now. Please email me directly at okelloandanje@gmail.com.');
+    } finally {
+      submitButton.disabled = false;
+      submitLabel.textContent = defaultLabel;
+    }
+  });
+}
+
 let toastTimer;
 function showToast(message) {
   const toast = $('#toast');
@@ -391,3 +478,4 @@ setupProjects();
 setupTabs();
 setupInteractivePolish();
 setupUtilities();
+setupContactForm();

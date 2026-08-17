@@ -18,12 +18,16 @@ This edition is intentionally a **static HTML/CSS/JavaScript site**. It does not
 index.html
 styles.css
 script.js
+contact-config.js
+google-apps-script.gs
 netlify.toml
 success.html
 robots.txt
 sitemap.xml
 README.md
 DEPLOYMENT.md
+GOOGLE-SHEETS-SETUP.md
+UPDATE-NOTES.md
 assets/
 ```
 
@@ -37,4 +41,6 @@ The most common cause is that `index.html` is inside an extra nested folder. Net
 
 ## Contact form
 
-The contact form is already marked for Netlify Forms. After a production deployment, submit one test message and confirm it appears in the Netlify forms/submissions area.
+For the full Google Sheets + email setup, follow `GOOGLE-SHEETS-SETUP.md`. The included Apps Script is already configured for James's spreadsheet and `okelloandanje@gmail.com`.
+
+Until the Google Web App `/exec` URL is pasted into `contact-config.js`, Netlify Forms remains the fallback receiver.
